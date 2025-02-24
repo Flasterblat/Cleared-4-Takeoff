@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://br6fdwhn1a8sm"]
+
+[ext_resource type="Script" path="res://Scripts/CommandConsole.gd" id="1_50ldr"]
+[ext_resource type="Script" path="res://Scripts/GameLogic.gd" id="2_nvexy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RadarScreen" type="Node2D" parent="."]
+
+[node name="Airplanes" type="Node2D" parent="RadarScreen"]
+
+[node name="Airports" type="Node2D" parent="RadarScreen"]
+
+[node name="RadarOverlay" type="CanvasLayer" parent="RadarScreen"]
+
+[node name="CommandConsole" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_50ldr")
+
+[node name="InputField" type="LineEdit" parent="CommandConsole"]
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+
+[node name="TransmissionLog" type="TextEdit" parent="CommandConsole"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameLogic" type="Node" parent="."]
+script = ExtResource("2_nvexy")
